@@ -1,0 +1,20 @@
+<nav>
+  To Do List
+
+  <ul *appShowAuthed="false">
+    <li>
+      <a routerLink="/user/login">Login</a>
+    </li>
+    <li>
+      <a routerLink="/user/signup">Signup</a>
+    </li>
+  </ul>
+  <ul *appShowAuthed="true">
+    <li>
+      <a routerLink="/user/profile">{{ loggedUser.getProperty('name') }}</a>
+    </li>
+    <li>
+      <a routerLink="/user/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
