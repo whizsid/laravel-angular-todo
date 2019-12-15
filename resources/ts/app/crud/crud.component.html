@@ -1,0 +1,40 @@
+<div class="crud-wrapper">
+  <form #form="ngForm" (ngSubmit)="handleSubmit()" class="crud-form" *appShowAuthed="true">
+    <label class="crud-form-label" for="name">
+      <input (input)="handleChangeName()" [(ngModel)]="name" placeholder="Start typing to search or create..." class="crud-form-input" id="name" name="name" />
+    </label>
+    <input type="submit" class="crud-add" value="{{ isNumber(updatingKey)?'Update':'Create'}}" name="submit" />
+    <button type="button" (click)="handleClear()" class="crud-clear" name="clear">Clear</button>
+  </form>
+  <table class="crud-table" >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Created Date</th>
+        <th>Updated Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          {{item.getProperty('name')}}
+        </td>
+        <td>
+          {{item.getProperty('createdDate').format('YYYY-MM-DD')}}
+        </td>
+        <td>
+          {{item.getProperty('updatedDate').format('YYYY-MM-DD')}}
+        </td>
+        <td>
+          <input class="crud-delete" (click)="handleDelete(item)" type="button" value="Delete"/>
+          <input class="crud-update" (click)="selectToUpdate(i)" type="button" value="Update"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

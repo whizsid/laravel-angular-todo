@@ -1,5 +1,7 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="app-auth-form" id="loginForm">
-    <span *ngIf="status" ngClass="app-auth-message {{status}}">{{message}}</span>
+  <h4 class="app-auth-title" >Signup</h4>
+  <hr/>
+  <span *ngIf="status" ngClass="app-auth-message {{status}}">{{message}}</span>
     <label class="app-auth-form-label" for="name">
         Name:-
         <input required class="app-auth-form-input" [(ngModel)]="name" name="name" type="text" id="name" />

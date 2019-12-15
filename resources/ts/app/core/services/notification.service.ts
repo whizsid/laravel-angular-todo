@@ -1,3 +1,5 @@
+import { EventEmitter } from '@angular/core';
+
 export interface INotificationAction {
   label: string;
   callback: (id: string) => void;
@@ -8,7 +10,6 @@ export interface INotification {
   color: string;
   timeout?: number;
   id: number;
-  actions?: INotificationAction [];
 }
 
 export const NOTIFICATION_SUCCESS_COLOR = '#00FF00';
@@ -21,6 +22,8 @@ export default class NotificationService {
   protected notifications: {
     [x: string]: INotification;
   } = {};
+
+  public getNotifications = new EventEmitter<INotification[]>();
 
   protected lastId = -1;
 
@@ -54,10 +57,22 @@ export default class NotificationService {
     if (timeout) {
       window.setTimeout(() => {
         delete this.notifications[id];
+        this.notifyChanged();
       }, timeout);
     }
 
+    this.notifyChanged();
+
     return id;
+  }
+
+  protected notifyChanged() {
+    this.getNotifications.emit(Object.values(this.notifications));
+  }
+
+  public delete(notification: INotification) {
+    delete this.notifications[notification.id];
+    this.notifyChanged();
   }
 
 }

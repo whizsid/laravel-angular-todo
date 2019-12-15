@@ -8,10 +8,6 @@
   color: #f0f0f0;
 }
 
-body {
-  padding-top: 40px;
-}
-
 .app-header a:active , .app-header a:link , .app-header a:visited {
   color: inherit;
   text-decoration: inherit;

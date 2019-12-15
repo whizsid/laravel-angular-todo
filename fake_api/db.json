@@ -40,7 +40,46 @@
       "avatarUrl": "http://127.0.0.1/storage/images/jnkjnk.jpg"
     }
   },
-  "crud.create": {
-
+  "crud.todo.create": {
+    "success": true,
+    "message": "You have successfully created your item",
+    "data": {
+      "name": "I can not get the request",
+      "id": 1,
+      "createdDate": "2019-10-01",
+      "updatedDate": "2019-11-03"
+    }
+  },
+  "crud.todo.search": {
+    "success": true,
+    "count": 1,
+    "results": [
+      {
+        "name": "I can not get the request 1",
+        "id": 1,
+        "createdDate": "2019-10-01",
+        "updatedDate": "2019-11-03"
+      },
+      {
+        "name": "I can not get the request 2",
+        "id": 2,
+        "createdDate": "2019-10-01",
+        "updatedDate": "2019-11-03"
+      }
+    ]
+  },
+  "crud.todo.delete": {
+    "success": true,
+    "message": "Successfully deleted your record"
+  },
+  "crud.todo.update": {
+    "success": true,
+    "data": {
+      "name": "I can not get the request",
+      "id": 1,
+      "createdDate": "2019-10-01",
+      "updatedDate": "2019-11-03"
+    },
+    "message": "You have successfully updated your item."
   }
 }

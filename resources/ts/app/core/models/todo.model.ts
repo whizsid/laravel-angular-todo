@@ -1,10 +1,11 @@
 import { Base } from './base.model';
+import { Moment } from 'moment';
 
 export interface ITodo {
   name: string;
   id: number;
-  createdDate: Date;
-  updatedDate: Date;
+  createdDate: Moment;
+  updatedDate: Moment;
 }
 
 export default class Todo extends Base <ITodo> {

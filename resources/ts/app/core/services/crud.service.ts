@@ -42,7 +42,7 @@ export default class CRUDService {
     });
   }
 
-  public async save<T>(type: ICURDModel, model: Base<T>): Promise<APIResponse<IUpdateSuccessResponse<AppendId<T>>>> {
+  public async update<T>(type: ICURDModel, model: Base<T>): Promise<APIResponse<IUpdateSuccessResponse<AppendId<T>>>> {
     return this.apiService.post<IUpdateSuccessResponse<AppendId<T>>>(`${SERVER_API_URL}crud/${type.link}/update`, {
       data: model.data
     }).then(response => {

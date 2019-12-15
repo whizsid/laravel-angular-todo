@@ -16,6 +16,12 @@ export default class AuthGuard implements CanActivate {
       this.router.navigate(['/user/login']);
     }
 
+    this.userSerivce.getLoggedUser.subscribe(response => {
+      if (!response) {
+        this.router.navigate(['/user/login']);
+      }
+    });
+
     return authenticated;
   }
 }

@@ -1,0 +1,21 @@
+.notification-wrapper {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 400px;
+}
+
+.notification {
+  width: 384px;
+  background: #404040;
+  color: #f0f0f0;
+  padding: 8px;
+  margin: 8px;
+}
+
+.notification-action {
+  border: double 2px #ebebeb;
+  color: #ebebeb;
+  background: #303030;
+  margin: 8px;
+}

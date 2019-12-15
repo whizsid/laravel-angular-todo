@@ -13,10 +13,10 @@
   </ul>
   <ul class="app-header-link-list" *appShowAuthed="true">
     <li class="app-header-link" >
-      <a routerLink="/user/profile">{{ loggedUser.getProperty('name') }}</a>
+      <a routerLink="/">{{ loggedUser.getProperty('name') }}</a>
     </li>
     <li class="app-header-link">
-      <a routerLink="#" (click)="handleLogout()">Logout</a>
+      <a routerLink="" (click)="handleLogout()">Logout</a>
     </li>
   </ul>
 </nav>

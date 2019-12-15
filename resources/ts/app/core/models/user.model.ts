@@ -1,11 +1,12 @@
 import { Base } from './base.model';
+import {Moment} from 'moment';
 
 export interface IUser {
   name: string;
   email: string;
   id?: number;
-  createdDate: Date;
-  updatedDate: Date;
+  createdDate: Moment;
+  updatedDate: Moment;
   avatarUrl: string;
 }
 

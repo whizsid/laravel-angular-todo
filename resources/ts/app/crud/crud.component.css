@@ -1,0 +1,46 @@
+.crud-wrapper {
+  border: 1px solid #404040;
+  width: 420px;
+  margin: auto;
+}
+
+.crud-form-input {
+  width: 300px;
+  padding: 6px 0;
+}
+
+.crud-add, .crud-clear {
+  width: 58px;
+  padding:8px 6px;
+}
+
+.crud-table {
+  width: 100%;
+}
+
+.crud-add, .crud-clear, .crud-delete, .crud-update {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 8px 6px ;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+.crud-update {
+  background: #60a3bc
+}
+
+.crud-add {
+  background: #20bf6b;
+}
+
+.crud-delete, .crud-update {
+  margin: 4px;
+}
+
+.crud-table thead {
+  background: #ebebeb;
+}

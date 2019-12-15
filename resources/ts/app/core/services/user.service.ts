@@ -4,6 +4,7 @@ import User, { IUser } from '../models/user.model';
 import { SERVER_API_URL } from 'resources/ts/config';
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import JWTService from './jwt.service';
+import * as moment from 'moment';
 
 interface ILoginSuccessResponse {
   message: string;
@@ -42,7 +43,7 @@ export default class UserService {
   }
 
   protected setAuth(fields: IUser, token: string): void {
-    this.loggedUser = new User({...fields, createdDate: new Date(fields.createdDate), updatedDate: new Date(fields.updatedDate)});
+    this.loggedUser = new User({...fields, createdDate: moment(fields.createdDate), updatedDate: moment(fields.updatedDate)});
     this.getLoggedUser.emit(this.loggedUser);
     this.token = token;
     this.jwtService.saveToken(token);
@@ -63,7 +64,7 @@ export default class UserService {
         if (response.success) {
           this.setAuth(response.user, response.token);
 
-          this.notificationService.success(response.message);
+          this.notificationService.success(response.message, 2000);
         } else if (response.message) {
           this.notificationService.error(response.message);
         }
@@ -77,7 +78,7 @@ export default class UserService {
       email, password, name
     }).then(response => {
       if (response.success) {
-        this.notificationService.success(response.message);
+        this.notificationService.success(response.message, 2000);
         this.setAuth(response.user, response.token);
       } else if (response.message) {
         this.notificationService.error(response.message);
@@ -91,7 +92,7 @@ export default class UserService {
     return this.apiService.post<ILogoutSuccessResponse>(`${SERVER_API_URL}user/logout`)
       .then(response => {
         if (response.success) {
-          this.notificationService.success(response.message);
+          this.notificationService.success(response.message, 2000);
         } else {
           this.notificationService.error(response.message);
         }
@@ -111,8 +112,6 @@ export default class UserService {
         message: 'No user logged in'
       }));
     }
-
-    console.log(this.token);
 
     return this.apiService.post<IAuthenticateSuccessResponse>(`${SERVER_API_URL}user/check`, {
       token: this.token
