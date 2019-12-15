@@ -26,7 +26,8 @@ export default class APIService {
 
   private getAuthHeaders(): {[x: string]: any} {
     const token = this.jwtService.getToken();
-    return token ? {} : {Authorization: `Bearer ${token}`};
+
+    return token ? {Authorization: `Bearer ${token}`} : {};
   }
 
   public get<T>(url: string, queries: {[x: string]: any} = {}): Promise<APIResponse<T>> {

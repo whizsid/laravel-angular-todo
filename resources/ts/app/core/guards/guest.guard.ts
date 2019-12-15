@@ -13,7 +13,7 @@ export default class GuestGuard implements CanActivate {
     const authenticated =  this.userSerivce.isAuthenticated();
 
     if (authenticated) {
-      this.router.navigate(['/user/profile']);
+      this.router.navigate(['/']);
     }
 
     return !authenticated;

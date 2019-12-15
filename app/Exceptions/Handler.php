@@ -46,6 +46,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        switch (get_class($exception)) {
+            case 'App\Exceptions\WebAPIException':
+                return response()->json([
+                    'success'=>false,
+                    'message' => $exception->getMessage(),
+                    'code' => 'WE' . $exception->getCode(),
+                ]);
+            default:
+                return parent::render($request, $exception);
+
+        }
     }
+
 }

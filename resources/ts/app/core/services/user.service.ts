@@ -113,9 +113,7 @@ export default class UserService {
       }));
     }
 
-    return this.apiService.post<IAuthenticateSuccessResponse>(`${SERVER_API_URL}user/check`, {
-      token: this.token
-    }).then(response => {
+    return this.apiService.post<IAuthenticateSuccessResponse>(`${SERVER_API_URL}user/check`).then(response => {
       if (response.success) {
         this.setAuth(response.user, this.token);
       } else {
