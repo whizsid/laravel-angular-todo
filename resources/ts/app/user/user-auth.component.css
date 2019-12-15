@@ -1,0 +1,47 @@
+.app-auth-form {
+  margin-top: 40vh;
+  margin-left: 50vw;
+  transform: translate(-50%);
+  border: solid 2px #404040;
+  width: 350px;
+  padding: 4px;
+  padding-bottom: 32px;
+}
+
+.app-auth-form-input {
+  width: 100%;
+  border: none;
+  box-shadow: inset 0px 0px 2px #404040;
+  height: 24px;
+}
+
+.app-auth-form-label {
+  display: block;
+  padding: 4px;
+}
+
+.app-auth-form-submit {
+  background: #404040;
+  color: #f0f0f0;
+  border: 1px double #404040;
+  float: right;
+  height: 24px;
+}
+
+.app-auth-message {
+  background: #0eff00;
+  width: 100%;
+  display: block;
+  padding: 4px 0;
+  text-align: center;
+}
+
+.app-auth-message.error {
+  background: #ff0e00;
+}
+
+.app-auth-title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}

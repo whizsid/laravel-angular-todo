@@ -1,20 +1,22 @@
-<nav>
-  To Do List
+<nav class="app-header">
+  <a class="app-header-brand-name" routerLink="/">
+    To Do List
+  </a>
 
-  <ul *appShowAuthed="false">
-    <li>
+  <ul class="app-header-link-list" *appShowAuthed="false">
+    <li class="app-header-link">
       <a routerLink="/user/login">Login</a>
     </li>
-    <li>
+    <li class="app-header-link" >
       <a routerLink="/user/signup">Signup</a>
     </li>
   </ul>
-  <ul *appShowAuthed="true">
-    <li>
+  <ul class="app-header-link-list" *appShowAuthed="true">
+    <li class="app-header-link" >
       <a routerLink="/user/profile">{{ loggedUser.getProperty('name') }}</a>
     </li>
-    <li>
-      <a routerLink="/user/logout">Logout</a>
+    <li class="app-header-link">
+      <a routerLink="#" (click)="handleLogout()">Logout</a>
     </li>
   </ul>
 </nav>

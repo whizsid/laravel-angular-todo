@@ -6,6 +6,8 @@ import CRUDService from './services/crud.service';
 import JWTService from './services/jwt.service';
 import NotificationService from './services/notification.service';
 import UserService from './services/user.service';
+import GuestGuard from './guards/guest.guard';
+import AuthGuard from './guards/auth.guard';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import UserService from './services/user.service';
     CRUDService,
     JWTService,
     NotificationService,
-    UserService
+    UserService,
+    GuestGuard,
+    AuthGuard
   ],
   declarations: []
 })

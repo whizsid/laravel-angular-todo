@@ -1,0 +1,46 @@
+{
+  "user.login": {
+    "success": true,
+    "user": {
+      "name": "Ramesh Kithsiri",
+      "email": "whizsid@aol.com",
+      "id": 1,
+      "createdDate": "2019-10-03",
+      "updatedDate": "2019-10-04",
+      "avatarUrl": "http://127.0.0.1/storage/images/jnkjnk.jpg"
+    },
+    "token": "Ajnjnjnjjnjnj",
+    "message": "Successfully logged in. Please wati while you redirecting to the home page"
+  },
+  "user.check": {
+    "success": true,
+    "user": {
+      "name": "Ramesh Kithsiri",
+      "email": "whizsid@aol.com",
+      "id": 1,
+      "createdDate": "2019-10-03",
+      "updatedDate": "2019-10-04",
+      "avatarUrl": "http://127.0.0.1/storage/images/jnkjnk.jpg"
+    }
+  },
+  "user.logout": {
+    "success": true,
+    "message": "Successfully logged out. Please wati while you redirecting to the home page."
+  },
+  "user.signup": {
+    "success": true,
+    "message": "Successfully signed in. Please wati while you redirecting to the home page",
+    "token": "Ajnjnjnjjnjnj",
+    "user": {
+      "name": "Ramesh Kithsiri",
+      "email": "whizsid@aol.com",
+      "id": 1,
+      "createdDate": "2019-10-03",
+      "updatedDate": "2019-10-04",
+      "avatarUrl": "http://127.0.0.1/storage/images/jnkjnk.jpg"
+    }
+  },
+  "crud.create": {
+
+  }
+}

@@ -8,6 +8,6 @@ export default class JWTService {
   }
 
   destroyToken() {
-    window.localStorage.removeItem('jwtToken');
+    window.localStorage.removeItem('userToken');
   }
 }

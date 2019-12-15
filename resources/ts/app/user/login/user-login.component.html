@@ -1,0 +1,14 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="app-auth-form" id="loginForm">
+  <h4 class="app-auth-title" >Login</h4>
+  <hr/>
+  <span *ngIf="status" ngClass="app-auth-message {{status}}">{{message}}</span>
+  <label class="app-auth-form-label" for="email">
+    Email:-
+    <input required class="app-auth-form-input" [(ngModel)]="email" name="email" type="email" id="email" />
+  </label>
+  <label class="app-auth-form-label" for="password">
+    Password:-
+    <input required class="app-auth-form-input" name="password" type="password" [(ngModel)]="password" id="password" />
+  </label>
+  <input class="app-auth-form-submit" name="submit" [(ngModel)]="submited" type="submit"  id="submit" />
+</form>

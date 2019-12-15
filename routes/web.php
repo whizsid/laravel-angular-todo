@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(){
+  return view('angular');
+});
+
+Route::group(['prefix'=>'user'],function(){
+  Route::post('login','UserController@login');
 });

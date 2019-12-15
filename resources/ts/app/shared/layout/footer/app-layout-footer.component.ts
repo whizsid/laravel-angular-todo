@@ -4,7 +4,8 @@ import UserService from '../../../core/services/user.service';
 
 @Component({
   selector: 'app-layout-footer-component',
-  templateUrl: './app-layout-footer.component.html'
+  templateUrl: './app-layout-footer.component.html',
+  styleUrls: ['./app-layout-footer.component.css']
 })
 export class AppLayoutFooterComponent implements OnInit {
 
